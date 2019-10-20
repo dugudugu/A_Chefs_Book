@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-    </head>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
     
     <body>
-        <h1>Outside</h1>
+        
+<!-- NavBar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+        <!-- Navbar Logo -->
+        <a class="navbar-brand js-trigger" href="#">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="https://res.cloudinary.com/dbnahdjbc/image/upload/c_limit,h_100,w_150/v1571492467/A%20Chefs%20Book/images_lfcgfy.png" alt="Page logo">
+    </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-trigger" href="#">Browser</a></li>
+                <li class="nav-item"><a class="nav-link js-trigger" href="#">Add Recipe</a></li>
+                <li class="nav-item"><a class="nav-link js-trigger" href="#">Edit Recipe</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+        
         {% block content %}
         {% endblock %}
+
+<!-- Java Script and jQuery CDN tags -->
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts  -->
+<script type="text/javascript" src="static/js/interact.js"></script>
+    
     </body>
-    
-    
-    <footer>
-        
-    </footer>
+
+<footer>
+    <div>
+        <p>Made by C. Marchena | For educational use</p>
+    </div>
+</footer>
+
+
+
 </html>
