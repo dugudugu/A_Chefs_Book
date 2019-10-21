@@ -1,32 +1,46 @@
+/* Body */
+
+
+
+
+
+
+
+
 
 /* Body */
+
 body {
-  padding-top: 54px;
+  margin-top: 10rem;
   color: #868e96;
+  background-color: #FEFCF8;
 }
+
 
 @media (min-width: 992px) {
   body {
-    padding-top: 0;
-    padding-left: 17rem;
+    margin-top: 4rem;
+    color: #868e96;
+    background-color: #FEFCF8;
   }
 }
 
 
-
-
-
-
-
-
-
 /* Side Navbar */
+
 .navbar {
   background-color: #f1bc31!important;
 }
 
+.navbar-nav .nav-item .nav-link {
+  font-weight: 800;
+  font-size: x-large;
+  letter-spacing: 0.05rem;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
-    .navbar {
+  .navbar {
     text-align: center;
     position: fixed;
     top: 0;
@@ -36,16 +50,19 @@ body {
     width: 17rem;
     height: 100vh;
   }
+
   .navbar-brand {
     display: flex;
     margin: auto auto 0;
     padding: 0.5rem;
   }
+
   .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
   }
+
   .navbar-collapse {
     display: flex;
     align-items: flex-start;
@@ -53,14 +70,40 @@ body {
     width: 100%;
     margin-bottom: auto;
   }
+
   .navbar-collapse .navbar-nav {
     flex-direction: column;
     width: 100%;
   }
+
   .navbar-collapse .navbar-nav .nav-item {
     display: block;
   }
+
   .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
   }
+}
+
+
+/* Home Page */
+
+.intro-home {
+  margin-bottom: 6rem;
+}
+
+.card-image {
+  position: relative;
+  z-index: -1;
+}
+
+.card-home {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  background-color: #fff;
+  width: 80%;
+  z-index: 3;
+  margin-left: 10%;
+  margin-top: -5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
