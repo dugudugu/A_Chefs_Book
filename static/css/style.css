@@ -34,7 +34,7 @@ body {
 
 .navbar-nav .nav-item .nav-link {
   font-weight: 800;
-  font-size: x-large;
+  font-size: large;
   letter-spacing: 0.05rem;
   color: #fff;
 }
@@ -88,7 +88,8 @@ body {
 
 /* Home Page */
 
-.intro-home {
+.intro-home,
+.recipe-card {
   margin-bottom: 6rem;
 }
 
@@ -107,3 +108,24 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+/* Recipes */
+.recipe-card {
+  background: #fff;
+  width: 100%;
+}
+
+.fas {
+  color: #e25822;
+  font-size: xx-large;
+  padding: 10px;
+}
+
+.recipe-ingredients,
+.recipe-instructions {
+  font-size: large;
+  font-weight: 600;
+  text-decoration: underline;
+  
+}
+
