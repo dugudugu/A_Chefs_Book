@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<div class="recipe-card col-lg-6 offset-lg-4">
+	    
+		{% for recipe in recipes %}    
+			<article>
+	
+				<h2 class="recipe-title">{{recipe.recipe_name}}</h2>
+				<h5 class="recipe-type">{{recipe.dish_type}}</h5>
+		
+				<ul class="list-unstyled list-inline rating mb-0 text-center>
+					<li class="list-inline-item mr-0"><i class="fas fa-user"></i><span>{{recipe.dish_type}}</span></li>
+					<li class="list-inline-item mr-0"><i class="fas fa-clock"></i><span>{{recipe.preparation_time}}</span></li>
+					<li class="list-inline-item mr-0"><i class="fas fa-stopwatch"></i><span>{{recipe.cooking_time}}</span></li>
+					<li class="list-inline-item mr-0"><i class="fas fa-signal"></i><span>{{recipe.recipe_difficulty}}</span></li>
+					<li class="list-inline-item mr-0"><i class="fas fa-star"></i><span>{{recipe.recipe_rating}}</span></li>
+				</ul>
+		
+				<hr>
+		
+				<p class="recipe-description">{{recipe.recipe_description}}</p>
+				
+				<hr>
+				
+				<p class="recipe-ingredients">Ingredients:
+					<ul class="ingredient">
+						{% for ingredient in recipe.recipe_ingredients %}
+						<li>{{ingredient}}</li>
+						{% endfor %}
+					</ul>
+				</p>
+				
+				<hr>
+				
+				<p class="recipe-instructions"><span>Instructions:</p>
+					<ol class="instructions">
+						{% for instruction in recipe.recipe_instruction %}
+						<li class="instruction">{{instruction}}</li>
+						{% endfor %}
+					</ol>	
+				</p>
+					
+	
+			</article>
+	
+	
+	</div>
+
+		{% endfor %}
+	
+
+
+
+
+
+{% endblock %}
