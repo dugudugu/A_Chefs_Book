@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="add-recipe col-lg-6 offset-lg-4">
+
+    <div class="text-center">
+        <h2>Add a Recipe!</h2>
+        <p>Please fill in the form to add a recipe</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <form action "{{url_for('insert_recipe')}}" method="POST" class="add-recipe-form" >
+
+                    <div class=" col-12 mt-2">
+
+                        <!-- Recipe Title -->
+                        <div class="mt-2 md-form form-lg">
+                            <label for="title">Recipe title</label>
+                            <input type="text" id="title" name="title" value="" required class="form-control">
+                            
+                        </div>
+
+                        <!-- Recipe Description -->
+                        <div class="mt-2 md-form form-lg">
+                            <label for="description">Recipe description</label>
+                            <input type="text" id="description" name="description" value="" class="form-control">
+                            
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="input-field col-12 mt-2">
+
+                        <div class="row">
+
+                        <!-- Dish Type -->
+                        <div class="input-field col-2">
+                            <label for="type">Dish type</label>
+                            <select class="form-control" id="type" name="type" required>
+                        {% for cat in Categories %}
+                        <option value="{{cat.dish_type}}">{{cat.dish_type}}</option>
+                        {% endfor %}
+                            </select>
+                            
+                        </div>
+
+                        <!-- Servings -->
+                        <div class="input-field col-2">
+                            <label for="recipe-serving">Serves</label>
+                            <input type="number" name="serves" id="recipe-serving" required class="form-control"/>
+                        </div>
+
+                        <!-- Preparation Time -->
+                        <div class="input-field col-2">
+                            <label for="prep-time">Prep time</label>
+                            <input type="number" name="prep-time" id="prep-time" required class="form-control"/>
+                        </div>
+
+                        <!-- Cooking Time -->
+                        <div class="input-field col-2">
+                            <label for="cooking-time">Cooking time</label>
+                            <input type="number" name="cooking-time" id="cooking-time" required class="form-control"/>
+                        </div>
+
+                        <!-- Difficulty -->
+                        <div class="input-field col-2>
+                        <label for="difficulty">Level</label>
+                            <select class="form-control" id="difficulty" name="difficulty" required>
+                        {% for diff in Categories %}
+                        <option value="{{diff.recipe_difficulty}}">{{diff.recipe_difficulty}}</option>
+                        {% endfor %}
+                            </select>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Ingredients -->
+                    <div class="col-10 mt-2" id="TextBoxeGroupIngredients">
+                        <div class="row">
+                        <div class="col-10 mt-2" id="TextBoxeIngredient">
+                            <label for="title">Ingredients</label>
+                            <input type="text" id="ingredient" name="ingredient" value="" required class="form-control">
+                            <div class="row">
+                                <a class="btn" id="addIngredient"><i class="fas fa-plus" aria-hidden="true"></i></a>
+                                <a class="btn" id="removeIngredient"><i class="fas fa-minus" aria-hidden="true"></i></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Instructions -->
+                    <div class="col-10 mt-2" id="TextBoxeGroupInstructions ">
+                    <div class="row">
+                        <div class="col-10 mt-2" id="TextBoxInstruction">
+                        <label for="recipe_instruction">Instruction</label>
+                            <input type="text" name="instruction" id="recipe_instruction" value "" required class="form-control"/>
+                            <div class="row">
+                                <a class="btn" id="addInstruction"><i class="fas fa-plus" aria-hidden="true"></i></a>
+                                <a class="btn" id="removeInstruction"><i class="fas fa-minus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Recipe -->
+                    <div class="row submit-btn">
+                        <button class="btn" type="submit" name="">Submit</button>
+                        <a href="{{url_for('all_recipes')}}" class="btn">Cancel</a>
+                    </div>
+                
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
