@@ -11,7 +11,7 @@
     <div class="card">
         <div class="card-body">
             <form action "{{url_for('insert_recipe')}}" method="POST" class="add-recipe-form">
-
+            
                 <div class=" col-12 mt-2">
                     <!-- Recipe Title -->
                     <div class="mt-2 md-form form-lg">
@@ -42,7 +42,7 @@
                         <!-- Servings -->
                         <div class="input-field col-2">
                             <label for="recipe-serving">Serves</label>
-                            <input type="number" name="serves" id="recipe-serving" required class="form-control" />
+                            <input type="number" name="serves" id="recipe-serving" required class="form-control" min="0"/>
                         </div>
 
                         <!-- Preparation Time -->
@@ -57,13 +57,13 @@
                             <input type="text" name="cooking-time" id="cooking-time" required class="form-control" />
                         </div>
 
-                        <!-- Dish Type -->
+                        <!-- Difficulty level -->
                         <div class="input-field col-2">
                             <label for="difficulty">Level</label>
                             <select class="form-control" id="difficulty" name="difficulty" required>
-                                {% for diff in Categories %}
+                                {% for diff in difficulty %}
                                 <option value="{{diff.recipe_difficulty}}">{{diff.recipe_difficulty}}</option>
-                                {% endfor %}
+                                {% endfor %}    
                                 </select>
                         </div>
 
@@ -95,7 +95,7 @@
                         <input class="btn btn-primary submit-btn" type="submit" value="Submit">
                         <a class="btn btn-primary cancel-btn" role="button" href="{{url_for('all_recipes')}}">Cancel</a>
                     </div>
-
+            
             </form>
         </div>
     </div>
