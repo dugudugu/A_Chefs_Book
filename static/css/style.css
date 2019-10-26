@@ -1,11 +1,9 @@
-/* Body */
-
-
-
-
-
-
-
+.col-2,
+.col-3,
+.col-lg-3,
+.col-sm-4 {
+  padding-left: 0;
+}
 
 
 /* Body */
@@ -129,3 +127,59 @@ body {
   
 }
 
+
+
+/* Add Recipe */
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.label {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: inherit;
+}
+
+.flex {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.flex .fas {
+    color: #000;
+    font-size: medium;
+    padding: 10px;
+}
+
+.submit-btns {
+  align-items: center;
+}
+
+.submit-btn {
+  background-color: #007E33;
+  border-color: inherit;
+}
+
+.cancel-btn {
+  background-color: #CC0000;
+  border-color: inherit;
+}
+
+@media (max-width: 991px){
+.mobile-style {
+  margin-top: 48px;
+}
+}
+
+
+@media (min-width: 992px) {
+  .flex-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+}

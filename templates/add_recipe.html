@@ -8,7 +8,7 @@
         <p>Please fill in the form to add a recipe</p>
     </div>
 
-    <div class="card">
+    <div class="card shadow">
         <div class="card-body">
             <form action "{{url_for('insert_recipe')}}" method="POST" class="add-recipe-form">
             
@@ -30,7 +30,7 @@
                     <div class="flex-selection">
 
                         <!-- Dish Type -->
-                        <div class="input-field col-3">
+                        <div class="input-field col-lg-3 col-sm-4 mobile-style">
                             <label for="type" class="label">Dish type</label>
                             <select class="form-control" id="type" name="type" required>
                                 {% for cat in Categories %}
@@ -40,25 +40,25 @@
                         </div>
 
                         <!-- Servings -->
-                        <div class="input-field col-2">
+                        <div class="input-field col-lg-2 col-sm-4 mobile-style">
                             <label for="recipe-serving" class="label">Serves</label>
                             <input type="number" name="serves" id="recipe-serving" required class="form-control" min="0"/>
                         </div>
 
                         <!-- Preparation Time -->
-                        <div class="input-field col-2">
+                        <div class="input-field col-lg-2 col-sm-4 mobile-style">
                             <label for="prep-time" class="label">Prep time</label>
                             <input type="text" name="prep-time" id="prep-time" required class="form-control" />
                         </div>
 
                         <!-- Cooking Time -->
-                        <div class="input-field col-2">
+                        <div class="input-field col-lg-2 col-sm-4 mobile-style">
                             <label for="cooking-time" class="label">Cooking time</label>
                             <input type="text" name="cooking-time" id="cooking-time" required class="form-control" />
                         </div>
 
                         <!-- Difficulty level -->
-                        <div class="input-field col-3">
+                        <div class="input-field col-lg-3 col-sm-4 mobile-style">
                             <label for="difficulty" class="label">Level</label>
                             <select class="form-control" id="difficulty" name="difficulty" required>
                                 {% for diff in difficulty %}
