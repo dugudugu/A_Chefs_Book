@@ -1,7 +1,8 @@
+
+//Append new line for Ingredients
 $(document).ready(function () {
     var ingredientCounter = 2;
     $("#addIngredient").click(function () {
-        $(".removeIngredient").show();
         
         if(ingredientCounter > 15) {
             alert("Max of 15 ingredients allowed");
@@ -9,7 +10,7 @@ $(document).ready(function () {
         }
         
         var newTextBox = $(document.createElement('div'))
-            .attr("class", 'col-10 mt-2')
+            .attr("class", 'col-12 mt-2')
             .attr("id", 'TextBoxIngredient' + ingredientCounter)
             
         newTextBox.after().html(
@@ -20,14 +21,6 @@ $(document).ready(function () {
         ingredientCounter++;
     });
     
-    $("#removeIngredient").click(function () {
-        if(ingredientCounter <= 1) {
-            $("#removeIngredient").prop('disable', True);
-            return false
-        }    
-    
-        ingredientCounter--;
-        $("#TextBoxIngredient" + ingredientCounter).remove();
-    });
+  
     
 })
