@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    
+<!-- Browser Card -->
+<div class="intro-home col-lg-6 offset-lg-4">
+    
+<!-- Card image -->
+    <div class="card-image">
+        <img class="img-fluid" src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1571576090/A%20Chefs%20Book/Using-in-season-Fall-harvest-foods-in-your-meals-helps-save-money-and-add-a-huge-health-benefit.-Get-great-tips-and-recipes-at-Made-in-a-Pinch-and-follow-us-on-Pinterest1-min_brnfuq.png"
+            alt="Home Image">
+    </div>
+    
+<!--Card Text-->
+    <div class="card-home text-center">
+        <h5 class="card-title"><strong></strong>A Chef's Book</h5>
+        <p class="card-text">Where you can find a collection of recipes</p>
+    </div>
+</div>
+
+
+
+<!-- Favorite Recipes -->
+<div class="fav-recipes col-lg-8 offset-lg-2">
+    <div class="fav-header mt-5 mb-5">
+        <h3>Favorite Recipe's</h3>
+    </div>
+
+<!-- Card deck -->
+
+<div class="card-deck ">
+
+  <!-- Card -->
+  {% for recipe in recipes |slice(2,6) %}
+  
+  <div class="card mb-4">
+  
+    <!--Card image-->
+    <div class="view overlay">
+      
+      <img class="card-img-top" src="{{recipe.recipe_image}}" alt="Card image cap">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+      
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title">{{recipe.recipe_name}}</h4>
+      <h5 class="card-title">{{recipe.dish_type}}</h5>
+      <!--Text-->
+      <p class="card-text>{{recipe.recipe_description}}</p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+    </div>
+
+  </div>
+  
+  {% endfor %}
+  <!-- Card -->
+</div>
+</div>
+<!-- Card deck -->
+
+
+
+
+
+{% endblock %}
