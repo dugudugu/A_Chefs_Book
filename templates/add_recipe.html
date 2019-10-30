@@ -10,19 +10,19 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{url_for('insert_recipe')}}" method="POST" class="add-recipe-form">
+            <form action="{{url_for('insert_recipe')}}" method="POST" class="add-recipe-form" enctype="multipart/form-data">
             
                 <div class=" col-12 mt-3 mb-5">
                     <!-- Recipe Title -->
                     <div class="mt-3 md-form form-lg">
-                        <label for="title" class="label">Recipe title</label>
-                        <input type="text" id="title" name="title" value="" required class="form-control">
+                        <label for="recipe_title" class="label">Recipe title</label>
+                        <input type="text" id="title" name="recipe_title" value="" required class="form-control">
                     </div>
 
                     <!-- Recipe Description -->
                     <div class="mt-5 md-form form-lg">
-                        <label for="description" class="label">Recipe description</label>
-                        <input type="text" id="description" name="description" value="" class="form-control">
+                        <label for="recipe_description" class="label">Recipe description</label>
+                        <input type="text" id="description" name="recipe_description" value="" class="form-control">
                     </div>
                 </div>
 
@@ -31,8 +31,8 @@
 
                         <!-- Dish Type -->
                         <div class="input-field col-lg-3 col-sm-4 mobile-style">
-                            <label for="type" class="label">Dish type</label>
-                            <select class="form-control" id="type" name="type" required>
+                            <label for="dish_type" class="label">Dish type</label>
+                            <select class="form-control" id="type" name="dish_type" required>
                                 {% for cat in Categories %}
                                 <option value="{{cat.dish_type}}">{{cat.dish_type}}</option>
                                 {% endfor %}
@@ -41,26 +41,26 @@
 
                         <!-- Servings -->
                         <div class="input-field col-lg-2 col-sm-4 mobile-style">
-                            <label for="recipe-serving" class="label">Serves</label>
-                            <input type="number" name="serves" id="recipe-serving" required class="form-control" min="0"/>
+                            <label for="recipe_serving" class="label">Serves</label>
+                            <input type="number" name="serves" id="recipe_serving" required class="form-control" min="0"/>
                         </div>
 
                         <!-- Preparation Time -->
                         <div class="input-field col-lg-2 col-sm-4 mobile-style">
-                            <label for="prep-time" class="label">Prep time</label>
-                            <input type="text" name="prep-time" id="prep-time" required class="form-control" />
+                            <label for="preparation_time" class="label">Prep time</label>
+                            <input type="text" name="prep-time" id="preparation_time" required class="form-control" />
                         </div>
 
                         <!-- Cooking Time -->
                         <div class="input-field col-lg-2 col-sm-4 mobile-style">
-                            <label for="cooking-time" class="label">Cooking time</label>
-                            <input type="text" name="cooking-time" id="cooking-time" required class="form-control" />
+                            <label for="cooking_time" class="label">Cooking time</label>
+                            <input type="text" name="cooking-time" id="cooking_time" required class="form-control" />
                         </div>
 
                         <!-- Difficulty level -->
                         <div class="input-field col-lg-3 col-sm-4 mobile-style">
-                            <label for="difficulty" class="label">Level</label>
-                            <select class="form-control" id="difficulty" name="difficulty" required>
+                            <label for="recipe_difficulty" class="label">Level</label>
+                            <select class="form-control" id="difficulty" name="recipe_difficulty" required>
                                 {% for diff in difficulty %}
                                 <option value="{{diff.recipe_difficulty}}">{{diff.recipe_difficulty}}</option>
                                 {% endfor %}    
@@ -73,9 +73,9 @@
                     <!-- Recipe Ingredients -->
                     <div class="col-10 btn-inline mb-5" id="TextBoxGroupIngredients">
                         <div id="TextBoxIngredient">
-                            <label for="title" class="label">Ingredients (One ingredient for each line)</label>
+                            <label for="recipe_ingredients" class="label">Ingredients (One ingredient for each line)</label>
                                 <div class="flex">
-                                <input type="text" id="ingredient" name="ingredient" value=" " required class="form-control">
+                                <input type="text" id="ingredient" name="recipe_ingredients[1]" value=" " required class="form-control">
                                 <a class="btn btn-sm" id="addIngredient" role="button"><i class="fas fa-plus" aria-hidden="true "></i></a>
                                 </div>
                         </div>
@@ -85,18 +85,18 @@
                     <div class="col-12 mb-5" id="TextBoxInstructions">
                         <div class="form-group" id="TextBoxInstruction">
                             <label for="recipe_instruction" class="label">Instruction</label>
-                            <textarea class="form-control" id="TextBoxInstruction rows="10">
+                            <textarea class="form-control" id="TextBoxInstruction name="recipe_instruction">
                             </textarea>
                         </div>
                     </div>
                     
                     <!-- Upload Image for recipe -->
                     <div class=" mb-5 col-8">
-                        <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" />
-                        <label class="file-upload-container" for="file-upload">
-                                <input id="file-upload" type="file" class="form-control">
-                            </label>
-                        
+                        <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" height=250px width=250px/>
+                            <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="image-upload">
+                            <label class="custom-file-label" for="recipe_image">Choose Image</label>
+                            </div>
                     </div>
 
                     <!-- Submit Recipe -->
