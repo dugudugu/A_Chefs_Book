@@ -22,6 +22,24 @@ def home_page():
 def all_recipes():
     return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
     
+#Search Recipe
+@app.route('/search_for/', methods=['POST'])
+def search_for():
+    search_term = request.form['search_text']
+    if (search_term != ''):
+        return redirect(url_for('search_results', search_text=search_term))
+    else:
+        return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
+
+#Browser Recipe
+@app.route('/browser_recipes')
+def browser_recipes():
+    return render_template('browser_recipes.html', recipes=mongo.db.recipes.find().limit(5))
+    
+    
+    
+    
+    
 #Add Recipe Form 
 @app.route('/add_recipe')
 def add_recipe():
@@ -34,7 +52,24 @@ def add_recipe():
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('all-recipes.html'))
+    return redirect(url_for('all_recipes'))
+
+
+
+#Edit Recipe Form
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
+    all_categories = mongo.db.Categories.find()
+    return render_template('edit_recipe.html', 
+                            recipe=the_recipe,
+                            categorie=all_categories)
+
+
+
+
+
+
 
 
 
