@@ -23,20 +23,28 @@ def all_recipes():
     return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
     
 #Search Recipe
-@app.route('/search_for/', methods=['POST'])
-def search_for():
+@app.route('/search_bar/', methods=['POST'])
+def search_bar():
     search_term = request.form['search_text']
     if (search_term != ''):
         return redirect(url_for('search_results', search_text=search_term))
     else:
         return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
-
-#Browser Recipe
+    
+#Limit display of 5 recipes on the favorites section 
 @app.route('/browser_recipes')
 def browser_recipes():
     return render_template('browser_recipes.html', recipes=mongo.db.recipes.find().limit(5))
     
-    
+
+#Display single recipe
+@app.route('/single_recipe/<recipe_id>')
+def single_recipe(recipe_id):
+    return render_template('single_recipe.html', recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+
+
+
+
     
     
     
