@@ -22,7 +22,7 @@ def home_page():
 def all_recipes():
     return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
     
-#Search Recipe
+#Search Recipe term
 @app.route('/search_bar/', methods=['POST'])
 def search_bar():
     search_term = request.form['search_text']
@@ -30,7 +30,23 @@ def search_bar():
         return redirect(url_for('search_results', search_text=search_term))
     else:
         return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
+
+#Create Search Index
+
+
+
+
+#Search route
+@app.route('/search_results<search_text>')
+def search_results(search_text):
+    mongo.db.recipes.create_index([("$**", 'text')])
+    search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
+    return render_template('search_result.html', recipes=search_results)
     
+
+
+
+
 #Limit display of 5 recipes on the favorites section 
 @app.route('/browser_recipes')
 def browser_recipes():
