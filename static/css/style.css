@@ -128,6 +128,64 @@ body {
 }
 
 
+/* Browser Recipe */
+
+.browser-recipe-icons .fas {
+  color: #e25822;
+  font-size: small;
+}
+
+.view-btn {
+  color: #fff;
+  background-color: #e25822;
+  border-color: #e25822;
+}
+
+.card img {
+  height: 10%;
+  width: 60%;
+  margin-left: 20%;
+}
+
+@media (max-width: 991px){
+  .card-deck {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .card img {
+    height: 200px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Add Recipe */
 
@@ -168,6 +226,8 @@ body {
   background-color: #CC0000;
   border-color: inherit;
 }
+
+
 
 @media (max-width: 991px){
 .mobile-style {
