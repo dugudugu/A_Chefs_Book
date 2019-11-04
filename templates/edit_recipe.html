@@ -66,7 +66,7 @@
                             <label for="recipe_difficulty" class="label">Level</label>
                             <select class="form-control" id="difficulty" name="recipe_difficulty" required>
                                 {% for diff in difficulty %}
-                                    {% if diff.recipe_difficulty = recipe.recipe_difficulty %}
+                                    {% if diff.recipe_difficulty == recipe.recipe_difficulty %}
                                         <option value="{{diff.recipe_difficulty}}" selected>{{diff.recipe_difficulty}}</option>
                                     {% else %}
                                         <option value="{{diff.recipe_difficulty}}">{{diff.recipe_difficulty}}</option>
@@ -83,7 +83,7 @@
                         <div id="TextBoxIngredient">
                             <label for="recipe_ingredients" class="label">Ingredients (One ingredient for each line)</label>
                                 <div class="flex">
-                                <input type="text" id="ingredient" name="recipe_ingredients[1]" value=" " required class="form-control">
+                                <input type="text" id="ingredient" name="recipe_ingredients[1]" value="" required class="form-control">
                                 <a class="btn btn-sm" id="addIngredient" role="button"><i class="fas fa-plus" aria-hidden="true "></i></a>
                                 </div>
                         </div>
@@ -91,10 +91,15 @@
 
                     <!-- Recipe Instructions -->
                     <div class="col-12 mb-5" id="TextBoxInstructions">
-                        <div class="form-group" id="TextBoxInstruction">
+                        <div class="form-group" >
                             <label for="recipe_instruction" class="label">Instruction</label>
-                            <textarea class="form-control" id="TextBoxInstruction name="recipe_instruction">{{recipe.preparation_time}}
-                            </textarea>
+                    		<div contenteditable="true" class="instruction-editor">
+                    			<ol  class="instructions">
+                    			{% for instruction in recipe.recipe_instruction %}
+                    			<li class="instruction ">{{instruction}}</li>
+                    			{% endfor %}
+                    			</ol>
+                    		</div>
                         </div>
                     </div>
                     
