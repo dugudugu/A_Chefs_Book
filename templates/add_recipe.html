@@ -72,11 +72,12 @@
 
                     <!-- Recipe Ingredients -->
                     <div class="col-10 btn-inline mb-5" id="TextBoxGroupIngredients">
-                        <div id="TextBoxIngredient">
-                            <label for="recipe_ingredients" class="label">Ingredients (One ingredient for each line)</label>
+                        <div id="TextBoxIngredientDiv">
+                            <label for="ingredients" class="label">Ingredients (One ingredient for each line)</label>
+                            <input type="text" id="recipe_ingredients" name="recipe_ingredients" value="" required class="form-control">
                                 <div class="flex">
-                                <input type="text" id="ingredient" name="recipe_ingredients[1]" value=" " required class="form-control">
                                 <a class="btn btn-sm" id="addIngredient" role="button"><i class="fas fa-plus" aria-hidden="true "></i></a>
+                                <a class="btn btn-sm removeIngredientDiv" id="removeIngredient" role="button"><i class="fas fa-minus" aria-hidden="true "></i></a>
                                 </div>
                         </div>
                     </div>
@@ -85,7 +86,7 @@
                     <div class="col-12 mb-5" id="TextBoxInstructions">
                         <div class="form-group" id="TextBoxInstruction">
                             <label for="recipe_instruction" class="label">Instruction</label>
-                            <textarea class="form-control" id="TextBoxInstruction name="recipe_instruction">
+                            <textarea class="form-control" id="BoxInstruction" name="recipe_instruction">
                             </textarea>
                         </div>
                     </div>
@@ -101,7 +102,7 @@
 
                     <!-- Submit Recipe -->
                     <div class="submit-btns col-12">
-                        <input class="btn btn-primary submit-btn" type="submit" value="Submit">
+                        <input class="btn btn-primary submit-btn" type="submit" value="Submit" id="submit">
                         <a class="btn btn-primary cancel-btn" role="button" href="{{url_for('all_recipes')}}">Cancel</a>
                     </div>
             
