@@ -31,10 +31,6 @@ def search_bar():
     else:
         return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
 
-#Create Search Index
-
-
-
 
 #Search route
 @app.route('/search_results<search_text>')
@@ -75,8 +71,30 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    
+    recipe_title = request.form['recipe_title']
+    recipe_description = request.form['recipe_description']
+    recipe_ingredients = request.form.getlist('recipe_ingredients')
+    recipe_instruction = request.form.getlist('recipe_instruction')
+    
+    recipe_form = {
+        "recipe_title" : recipe_title,
+        "recipe_description" : recipe_description,
+        "recipe_ingredients" : recipe_ingredients,
+        "recipe_instruction" : recipe_instruction,
+    }
+    
+    recipes.insert_one(recipe_form)
     return redirect(url_for('all_recipes'))
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,9 +103,8 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
     all_categories = mongo.db.Categories.find()
-    return render_template('edit_recipe.html', 
-                            recipe=the_recipe,
-                            categorie=all_categories)
+    the_level = mongo.db.difficulty.find()
+    return render_template('edit_recipe.html', recipe=the_recipe, Categories=all_categories, difficulty=the_level)
 
 
 
