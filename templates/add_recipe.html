@@ -73,27 +73,30 @@
                     <!-- Recipe Ingredients -->
                     <div class="col-10 btn-inline mb-5" id="TextBoxGroupIngredients">
                         <div id="TextBoxIngredientDiv">
-                            <label for="ingredients" class="label">Ingredients (One ingredient for each line)</label>
-                            <input type="text" id="recipe_ingredients" name="recipe_ingredients" value="" required class="form-control">
-                                <div class="flex">
-                                <a class="btn btn-sm" id="addIngredient" role="button"><i class="fas fa-plus" aria-hidden="true "></i></a>
+                            <label for="recipe_ingredients" class="label">Ingredients</label>
+                            <input type="text" id="ingredient" name="recipe_ingredients" value="" required class="form-control" placeholder="e.g. 2 medium chopped onions">
+                                <div class="row">
+                                <a class="btn btn-sm" id="addIngredient" role="button"><i class="fas fa-plus" aria-hidden="true"></i></a>
                                 <a class="btn btn-sm removeIngredientDiv" id="removeIngredient" role="button"><i class="fas fa-minus" aria-hidden="true "></i></a>
                                 </div>
                         </div>
                     </div>
 
                     <!-- Recipe Instructions -->
-                    <div class="col-12 mb-5" id="TextBoxInstructions">
-                        <div class="form-group" id="TextBoxInstruction">
+                    <div class="col-10 mb-5 instr" id="TextBoxGroupInstructions">
+                        <div id="TextBoxInstructionDiv">
                             <label for="recipe_instruction" class="label">Instruction</label>
-                            <textarea class="form-control" id="BoxInstruction" name="recipe_instruction">
-                            </textarea>
+                            <textarea class="form-control text-instr" id="recipe_instruction" name="recipe_instruction" type="text" placeholder="e.g. In a hot pan combine oil, onion and pepper and cook for 5 miuntes."></textarea>
+                                <div class="row">
+                                <a class="btn btn-sm" id="addInstruction" role="button"><i class="fas fa-plus" aria-hidden="true"></i></a>
+                                <a class="btn btn-sm removeInstructionDiv" id="removeInstruction" role="button"><i class="fas fa-minus" aria-hidden="true "></i></a>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Upload Image for recipe -->
                     <div class=" mb-5 col-8">
-                        <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview" height=250px width=250px/>
+                        <img src="https://www.industriehof.com/images/social/xing-24x24.png" id="img-preview"/>
                             <div class="custom-file">
                             <input type="file" class="custom-file-input" id="image-upload">
                             <label class="custom-file-label" for="recipe_image">Choose Image</label>
