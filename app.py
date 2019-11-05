@@ -74,12 +74,22 @@ def insert_recipe():
     
     recipe_title = request.form['recipe_title']
     recipe_description = request.form['recipe_description']
+    dish_type = request.form['dish_type']
+    recipe_difficulty = request.form['recipe_difficulty']
+    recipe_serving = request.form['recipe_serving']
+    preparation_time = request.form['preparation_time']
+    cooking_time = request.form['cooking_time']
     recipe_ingredients = request.form.getlist('recipe_ingredients')
     recipe_instruction = request.form.getlist('recipe_instruction')
     
     recipe_form = {
         "recipe_title" : recipe_title,
         "recipe_description" : recipe_description,
+        "dish_type" : dish_type,
+        "recipe_serving" : recipe_serving,
+        "recipe_difficulty" : recipe_difficulty,
+        "preparation_time" : preparation_time,
+        "cooking_time" : cooking_time,
         "recipe_ingredients" : recipe_ingredients,
         "recipe_instruction" : recipe_instruction,
     }
