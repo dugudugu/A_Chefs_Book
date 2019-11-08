@@ -51,11 +51,6 @@ def browser_recipes():
 def single_recipe(recipe_id):
     return render_template('single_recipe.html', recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
 
-
-
-
-    
-    
     
 #Add Recipe Form 
 @app.route('/add_recipe')
@@ -123,7 +118,11 @@ def update_recipe(recipe_id):
     
     return redirect(url_for('single_recipe', recipe_id=recipe_id ))
 
-
+#Delete Recipe
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('home_page'))
 
 
 
