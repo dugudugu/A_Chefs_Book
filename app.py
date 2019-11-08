@@ -121,7 +121,7 @@ def update_recipe(recipe_id):
         'recipe_instruction' : request.form.getlist('recipe_instruction')
     })
     
-    return redirect(url_for('all_recipes'))
+    return redirect(url_for('single_recipe', recipe_id=recipe_id ))
 
 
 
