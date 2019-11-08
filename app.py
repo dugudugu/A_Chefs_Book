@@ -38,11 +38,8 @@ def search_results(search_text):
     mongo.db.recipes.create_index([("$**", 'text')])
     search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
     return render_template('search_result.html', recipes=search_results)
+
     
-
-
-
-
 #Limit display of 5 recipes on the favorites section 
 @app.route('/browser_recipes')
 def browser_recipes():
@@ -98,16 +95,6 @@ def insert_recipe():
     return redirect(url_for('all_recipes'))
 
 
-
-
-
-
-
-
-
-
-
-
 #Edit Recipe Form
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
@@ -115,6 +102,41 @@ def edit_recipe(recipe_id):
     all_categories = mongo.db.Categories.find()
     the_level = mongo.db.difficulty.find()
     return render_template('edit_recipe.html', recipe=the_recipe, Categories=all_categories, difficulty=the_level)
+
+#Submit Change of a Recipe
+@app.route('/update_recipe/<recipe_id>')
+def update_recipe(recipe_id):
+    recipes= mongo.db.recipes
+    
+    recipe_title = request.form['recipe_title']
+    recipe_description = request.form['recipe_description']
+    dish_type = request.form['dish_type']
+    recipe_difficulty = request.form['recipe_difficulty']
+    recipe_serving = request.form['recipe_serving']
+    preparation_time = request.form['preparation_time']
+    cooking_time = request.form['cooking_time']
+    recipe_ingredients = request.form.getlist('recipe_ingredients')
+    recipe_instruction = request.form.getlist('recipe_instruction')
+    
+    recipes.update({"_id":ObjectId(recipe_id)}, 
+        {
+        "recipe_title" : recipe_title,
+        "recipe_description" : recipe_description,
+        "dish_type" : dish_type,
+        "recipe_serving" : recipe_serving,
+        "recipe_difficulty" : recipe_difficulty,
+        "preparation_time" : preparation_time,
+        "cooking_time" : cooking_time,
+        "recipe_ingredients" : recipe_ingredients,
+        "recipe_instruction" : recipe_instruction,
+    })
+    return redirect(url_for('all_recipes'))
+
+
+
+
+
+
 
 
 
