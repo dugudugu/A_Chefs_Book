@@ -119,19 +119,6 @@ def delete_recipe(recipe_id):
     return redirect(url_for('home_page'))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),
