@@ -220,4 +220,50 @@
          width: 200px;
     }
 }
- 
+
+
+
+/* All Recipes */
+
+.all-cards {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.all-cards>* {
+ flex: 1 1 300px;
+}
+
+.card-container {
+ width: 90%;
+ margin-left: 0 auto;
+ margin-right: 0;
+ padding: 0.5em 0;
+}
+
+.recipe {
+ width: 90%;
+ margin: 0.5em auto;
+ background-color: #fff;
+ border: 1px solid #ced4da;
+ height: auto;
+ padding-bottom: 20px;
+ -webkit-box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.22);
+ box-shadow: 0px 10px 11px -5px rgba(0, 0, 0, 0.22);
+}
+
+.recipe-image,
+.description {
+ width: 90%;
+ margin: 0 auto;
+}
+
+.recipe-image img {
+ display: block;
+ margin: 0 auto;
+ width: 90%;
+ height: 200px;
+}
+
+
+
