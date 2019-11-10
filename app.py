@@ -38,13 +38,7 @@ def search_results(search_text):
     mongo.db.recipes.create_index([("$**", 'text')])
     search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
     return render_template('search_result.html', recipes=search_results)
-
-    
-#Limit display of 5 recipes on the favorites section 
-@app.route('/browser_recipes')
-def browser_recipes():
-    return render_template('browser_recipes.html', recipes=mongo.db.recipes.find().limit(5))
-    
+   
 
 #Display single recipe
 @app.route('/single_recipe/<recipe_id>')
