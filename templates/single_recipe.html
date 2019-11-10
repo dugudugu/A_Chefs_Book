@@ -5,11 +5,15 @@
 	
 	{% for recipe in recipes %}
 		<article>
+			
+			<div class="single-recipe-img pb-2">
+				<img src="{{recipe.recipe_image}}" height="300px" width="300px" alt="recipe-image">
+			</div>
 	
-			<h2 class="recipe-title">{{recipe.recipe_name}}</h2>
+			<h3 class="recipe-title">{{recipe.recipe_name}}</h3>
 			<h5 class="recipe-type">{{recipe.dish_type}}</h5>
 	
-			<ul class="list-unstyled list-inline rating mb-0 text-center">
+			<ul class="list-unstyled list-inline rating mb-0">
 				<li class="list-inline-item mr-0"><i class="fas fa-user"></i><span>{{recipe.dish_type}}</span></li>
 				<li class="list-inline-item mr-0"><i class="fas fa-user"></i><span>{{recipe.recipe_serving}}</span></li>
 				<li class="list-inline-item mr-0"><i class="fas fa-clock"></i><span>{{recipe.preparation_time}}</span></li>
