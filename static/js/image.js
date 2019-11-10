@@ -2,9 +2,9 @@ var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dbnahdjbc/upload';
 var CLOUDINARY_UPLOAD_PRESET = 'trhi3mfq';
 
 var imgPreview = document.getElementById('img-preview');
-var fileUpload = document.getElementById('file-upload');
+var recipe_image = document.getElementById('file-upload');
 
-fileUpload.addEventListener('change', function(event) {
+recipe_image.addEventListener('change', function(event) {
     var file = event.target.files[0];
     var formData = new FormData();
     formData.append('file', file);
@@ -24,3 +24,5 @@ fileUpload.addEventListener('change', function(event) {
         console.error("Please choose an other image")
     });
 });
+
+
