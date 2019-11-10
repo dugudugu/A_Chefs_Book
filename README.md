@@ -23,8 +23,34 @@ Introduction?
     #### Acknowledgements
 7. Disclaimer
 
-## Features
 
+
+
+
+
+
+
+
+
+## Features
+### Existing Features
+1. Navbar - Consists of the A Chefs Book logo which returns the user to the homepage of the app. There are also links to the “Home”, “View All”, “Add Recipe” and a “Search” bar 
+2. View All - Constist of 2 main sections. The first section is a small intro which consist of an image and a search bar card. In the last section all recipes in the database are shown. Here the user can click on *View Recipe* to see the entire recipe. 
+    - In the *View Recipe* the user is able to Edit or Delete a recipe
+3. Add Recipe - In the add recipe the user is able to create his/her own recipe in the database. When the user submits the recipe he or she will see the recipe they just created
+4. Search - The user able to search for recipes in different locations in the application. When the user search something he or she will be redirected to a result page which will show a card of a recipe that has ther term they searched for
+
+
+### Future Features
+* Create a sign-in forms, so that only user that are sign in can add, edit or remove recipes
+* Create a path to store Cloudinary image to MonoDB
+* The ability to change recipe images
+* Create a new category in the application for dressings and sauces
+* Adding a filter and sorting capabilities to the view all page
+* Add time stamp and author to the recipes
+* Hide sensitive information
+* Link the quantities of ingredients in the recipes to the goods in stock
+* Limit the ammount of recipes that are shown in *View All*, to work with page instead of a never ending page
 
 
 
