@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block edit_recipe %}
 
 <div class="edit-recipe col-lg-6 offset-lg-4">
 
@@ -7,7 +7,8 @@
         <h2>Edit a Recipe!</h2>
         <p>Thought of new ideas to make this recipe even beter?</p>
     </div>
-
+    
+<!-- Edit Recipe Card -->
     <div class="card shadow">
         <div class="card-body">
             <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" class="edit-recipe-form">
@@ -128,7 +129,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
