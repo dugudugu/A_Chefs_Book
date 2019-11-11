@@ -1,4 +1,8 @@
-Introduction?
+<div align="center">
+	<a href="https://chefs-book.herokuapp.com/home_page">
+	<!-- Credits to the following for the image: Palm Palace Restaurant  -->
+	<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1572463755/A%20Chefs%20Book/1717f981-670a-4306-bbfd-4657d2dd97e9_zkktwv.jpg"/></a>
+</div>
 
 This application is a building block of an insane idea that my partner and I came up with. Let me take you thru our idea. Imagine this:
 You are sitting in a restaurant, and your menu card is a mobile device. Every single dish you can order is shown on the mobile device. This ordering system will only be a part of the whole operation. 
@@ -30,7 +34,38 @@ This recipe application is just a brick in our idea.
     #### Acknowledgements
 7. Disclaimer
 
+## UX
+This is the third project of my Code Institute Full Stack Software Development course, specifically the Data Centric Development module. The objective for this project is to "Create a web application that allows users to store and access cooking recipes, using the *Create, Read, Update and Delete (CRUD)* operations.
 
+I have decided to create this application for my partner. My partner is currently working as a head-chef and he would like to have all his written recipes online. This was the perfect opportunity to make an application that he would be able to use not only at work but also anywhere he goes. 
+
+### User Stories
+This application must be accesible for all user from mobile device and desktop.
+* As a new user I'm able to do the following:
+    - I'm able to do the following on the homepage
+        - Go to the *View All* page where all recipe will be shown. The user is also able to search for a recipe on the *View All* page
+        - The user is able to add a new recipe, by clicking on the *Add Recipe*.
+        - The user is able to search for a recipe with the help of the search form on the navbar
+    - The user is able to see a single recipe by clicking on the *View Recipe* botton on the recipe cards
+    - The user is able to edit a recipe once the sinlge recipe is displayed
+    - The user is able to remove a recipe once the single recipe is displayed. If the userd click on the *Delete* button a confirmation window will open. Once the deletion of the recipe is confirmed the recipe will be removed.
+
+* As someone that is looking for a online recipe book
+    - The application should be simple and attract the eyes as soon as it opens
+    - The ablilty to add, edit or remove recipes should be easy for the user
+    - The application should be able to be used on any mobile device
+
+* As someone that already has an online recipe book
+    - The user must have the abilities to view recipes
+
+### Wireframes
+For the webframes I have create 5 webframes which can be used in multiple was. 
+
+#### Devices with max-width: 991px
+<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1573480735/A%20Chefs%20Book/Mobile_wireframes_wuo9hr.png"/>
+
+#### Devices with min-width: 992px
+<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1573480809/A%20Chefs%20Book/PC_wireframe_scu3na.png"/>
 
 
 
@@ -54,6 +89,7 @@ This recipe application is just a brick in our idea.
 * Hide sensitive information
 * Link the quantities of ingredients in the recipes to the goods in stock
 * Limit the ammount of recipes that are shown in *View All*, to work with page instead of a never ending page
+* Show seach term when viewing search results
 
 
 
@@ -206,6 +242,8 @@ For the content of the webpage the following were used:
     - Favicon 
     - Made in a pinch
     - BBC Good Food 
+    - Palm Palace Restaurant
+    - Country Living
 
 
 ### Code
@@ -215,6 +253,7 @@ I would like to give credits to the following:
     - Kevin Lesht, for the basic layout of one recipe
     - Material Design for Bootstrap, for providing me with the design of elements in my project
     - Start Bootrap, for providing me with the Navbar
+    - Dev Coffee(Youtube tutorial), for the basic code for uploadin images to Cloudinary
 
 
 
