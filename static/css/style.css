@@ -273,4 +273,8 @@
 }
 
 
-
+@media (max-width: 991px){
+ .search-bar{
+  padding-left: 0;
+ }
+}
