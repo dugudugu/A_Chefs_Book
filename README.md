@@ -7,7 +7,7 @@ Introduction?
 2. Features
     #### Existing Features
     #### Future Features
-3. List of technologies
+3. List of Technologies
     #### Front-End Technologies
     #### Back-End Technologies
 4. Testing
@@ -22,10 +22,6 @@ Introduction?
     #### Code
     #### Acknowledgements
 7. Disclaimer
-
-
-
-
 
 
 
@@ -51,6 +47,30 @@ Introduction?
 * Hide sensitive information
 * Link the quantities of ingredients in the recipes to the goods in stock
 * Limit the ammount of recipes that are shown in *View All*, to work with page instead of a never ending page
+
+
+
+
+## List of Technologies
+### Front-End Technologies
+* InVision
+* Cloud9 IDE
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* Font Awesome
+* Cloudinary
+* Code Validators
+* CSS Matic
+* GitHub
+ 
+
+### Back-End Technologies
+* MongoDB
+* Python
+* Flask
+* Heroku
 
 
 
