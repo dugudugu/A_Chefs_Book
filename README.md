@@ -4,35 +4,21 @@
 	<img src="https://res.cloudinary.com/dbnahdjbc/image/upload/v1572463755/A%20Chefs%20Book/1717f981-670a-4306-bbfd-4657d2dd97e9_zkktwv.jpg"/></a>
 </div>
 
+
+
+
+## Introduction
+<div align="center">
 This application is a building block of an insane idea that my partner and I came up with. Let me take you thru our idea. Imagine this:
 You are sitting in a restaurant, and your menu card is a mobile device. Every single dish you can order is shown on the mobile device. This ordering system will only be a part of the whole operation. 
 In the kitchen, the chefs are able to read the recipes that they need or even add new ones. But once in a while, you manage to make a good recipe even better, so let us edit it. Or when it's no longer up to par you can simply remove it. 
 What makes this idea even crazier is you were able to link the recipe system to the current stock supply. So at the end of the day, the chefs can easily see what they need to order for the following day. 
 Or even better when an ingredient is no longer in stock the dish is temporarily removed for me the menu card. 
 This recipe application is just a brick in our idea.
+</div>
 
-## Table of Contents
-1. UX
-    #### User Stories
-    #### Wireframes
-2. Features
-    #### Existing Features
-    #### Future Features
-3. List of Technologies
-    #### Front-End Technologies
-    #### Back-End Technologies
-4. Testing
-    #### Manual Testing
-    #### Validators
-    #### Known Issues
-5. Deployment
-    #### Local Deploymeny
-    #### Remote Depolyment
-6. Credits
-    #### Contents
-    #### Code
-    #### Acknowledgements
-7. Disclaimer
+
+
 
 ## UX
 This is the third project of my Code Institute Full Stack Software Development course, specifically the Data Centric Development module. The objective for this project is to "Create a web application that allows users to store and access cooking recipes, using the *Create, Read, Update and Delete (CRUD)* operations.
