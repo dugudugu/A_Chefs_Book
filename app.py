@@ -17,10 +17,12 @@ mongo = PyMongo(app)
 def home_page():
     return render_template('index.html')
 
+
 #View Recipes
 @app.route('/all_recipes')
 def all_recipes():
     return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
+
     
 #Search Recipe term
 @app.route('/search_bar/', methods=['POST'])
@@ -31,7 +33,6 @@ def search_bar():
     else:
         return render_template('all_recipes.html', recipes=mongo.db.recipes.find())
 
-
 #Search route
 @app.route('/search_results<search_text>')
 def search_results(search_text):
@@ -40,10 +41,12 @@ def search_results(search_text):
     return render_template('search_result.html', recipes=search_results)
    
 
+
 #Display single recipe
 @app.route('/single_recipe/<recipe_id>')
 def single_recipe(recipe_id):
     return render_template('single_recipe.html', recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+
 
     
 #Add Recipe Form 
@@ -84,6 +87,7 @@ def insert_recipe():
     return redirect(url_for('all_recipes'))
 
 
+
 #Edit Recipe Form
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
@@ -111,6 +115,7 @@ def update_recipe(recipe_id):
     })
     
     return redirect(url_for('single_recipe', recipe_id=recipe_id ))
+
 
 #Delete Recipe
 @app.route('/delete_recipe/<recipe_id>')
