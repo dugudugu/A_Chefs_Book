@@ -83,6 +83,12 @@
      width: 80%;
      z-index: 3;
 }
+@media (max-width: 991px){
+ .nav-logo {
+  height: 50px;
+  width: 50px;
+ }
+}
 /* Recipes */
  .recipe-card {
      background: #fff;
